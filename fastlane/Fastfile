@@ -1,8 +1,22 @@
+desc "Set the fix version field for a set of JIRAs and create it if not found"
 lane :update_jira do
   version_number = get_version_number
   build_number = get_build_number
   lane = lane_context[SharedValues::LANE_NAME].split[-1]
   jira_set_fix_version(
     name: "#{lane} #{version_number} (#{build_number})"
+  )
+end
+
+desc "Releases a JIRA version"
+lane :release_version do
+  version_id = release_jira_version(
+    url: 'https://jira.yourdomain.com',
+    username: 'your_jira_username',
+    # Tip: Use the FL_RELEASE_JIRA_VERSION_PASSWORD variable to
+    # prevent hardcoding a password in your Fastfile
+    password: 'your_jira_password',
+    project_name: 'JIRA', # This is the tag that prefixes your JIRA tickets
+    name: "iOS 1.2.2",
   )
 end

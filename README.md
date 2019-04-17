@@ -27,11 +27,15 @@ lane :update_jira do
 end
 ```
 
-Thank you to https://github.com/valeriomazzeo/fastlane-plugin-jira_transition and https://github.com/valeriomazzeo/fastlane-plugin-jira_transition for inspiration.
+Thank you to https://github.com/SandyChapman/fastlane-plugin-jira_versions and https://github.com/valeriomazzeo/fastlane-plugin-jira_transition for inspiration.
 
-## Example
+## Set Fix Version Example
 
 Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane update_jira`.
+
+## Release Version Example
+
+Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins`, modifying the placeholder variables in the Fastfile lane and running `bundle exec fastlane release_version`. 
 
 ## Run tests for this plugin
 
